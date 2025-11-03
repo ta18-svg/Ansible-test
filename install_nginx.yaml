@@ -1,0 +1,31 @@
+# install Nginx using Ansible
+# Start and Enable Nginx
+# Check the status of Nginx
+# Collect host information
+- name: Setup nginx server on myserver list (host group)
+  hosts:
+    - devservers
+    - testservers
+  become: True
+
+  tasks:
+    - name: Install nginx on AL2023
+      ansible.builtin.dnf:
+        name: nginx
+        state: present
+
+    - name: Start nginx service
+      service:
+        name: nginx
+        state: started
+        
+    - name: Enable nginx service
+      service:
+        name: nginx
+        enabled: yes
+        
+    - name: Get nginx Installed version
+      command: nginx -v
+
+    - name: Get status of nginx service
+      command: systemctl status nginx

@@ -1,0 +1,37 @@
+# ---- SSH鍵・認証情報系 ----
+*.pem
+*.key
+*.crt
+
+#　実運用で使うファイル
+inventory.txt
+hosts
+
+# サンプルはGitに入れる
+!hosts.example
+!inventory.example
+
+
+# ---- Ansible 実行時に出るファイル ----
+*.retry
+
+# ---- ログ・一時ファイル ----
+*.log
+*.tmp
+*.swp
+*~
+.cache/
+logs/
+
+# ---- VSCode / IDE 設定（個人環境用） ----
+.vscode/
+.idea/
+*.iml
+
+# ---- macOS / Windows の余計なファイル ----
+.DS_Store
+Thumbs.db
+
+# ---- Python を使う場合 ----
+__pycache__/
+*.pyc
