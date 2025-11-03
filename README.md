@@ -21,23 +21,23 @@
 ```mermaid
 graph LR
   subgraph Controller["Ansible Master (EC2: controller-1)"]
-    A1[Playbook: install_nginx.yaml]
-    A2[Inventory: inventory.txt]
-    A3[ansible.cfg (/etc/ansible/)]
-    A4[hosts(/etc/ansible/)]
+    A1["Playbook: install_nginx.yaml"]
+    A2["Inventory: inventory.txt"]
+    A3["ansible.cfg (/etc/ansible/)"]
+    A4["hosts (/etc/ansible/)"]
   end
 
   subgraph Targets["Managed Nodes (Amazon Linux 2023)"]
-    T1[(ansible-dev-target1: 35.78.72.250)]
-    T2[(ansible-dev-target2: 35.77.223.151)]
-    T3[(ansible-test-target1: 13.114.42.248)]
-    T4[(ansible-test-target2: 54.250.192.204)]
+    T1["ansible-dev-target1\n35.78.72.250"]
+    T2["ansible-dev-target2\n35.77.223.151"]
+    T3["ansible-test-target1\n13.114.42.248"]
+    T4["ansible-test-target2\n54.250.192.204"]
   end
 
-  A1 -->|SSH + Ansible Modules| T1
-  A1 -->|SSH + Ansible Modules| T2
-  A1 -->|SSH + Ansible Modules| T3
-  A1 -->|SSH + Ansible Modules| T4
+  A1 -->|"SSH + Ansible Modules"| T1
+  A1 -->|"SSH + Ansible Modules"| T2
+  A1 -->|"SSH + Ansible Modules"| T3
+  A1 -->|"SSH + Ansible Modules"| T4
 
 ```
 
@@ -56,14 +56,14 @@ graph LR
 ### EC2インスタンス（Master 1台  Targets 4台）作成
  マスターマシンへSSH接続できるように設定しマスターマシンへSSH接続
 
-###　システム全体のパッケージを最新状態に更新する
+### システム全体のパッケージを最新状態に更新する
 sudo dnf update -y
-###　ansible インストール
+### ansible インストール
 sudo yum install ansible
-###　インストール確認
+### インストール確認
 ansible --version
 
-##　inventoryファイル作成
+### inventoryファイル作成
 vim inventory.txt
 
 ## 疎通確認
