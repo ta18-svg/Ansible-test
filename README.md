@@ -27,6 +27,8 @@ graph LR
     A4["hosts (/etc/ansible/)"]
   end
 
+  style XT fill:transparent,stroke:transparent
+  
   subgraph Targets["Managed Nodes (Amazon Linux 2023)"]
     XT[" "]
     T1["ansible-dev-target1<br>35.78.72.250"]
