@@ -28,10 +28,11 @@ graph LR
   end
 
   subgraph Targets["Managed Nodes (Amazon Linux 2023)"]
-    T1["ansible-dev-target1\n35.78.72.250"]
-    T2["ansible-dev-target2\n35.77.223.151"]
-    T3["ansible-test-target1\n13.114.42.248"]
-    T4["ansible-test-target2\n54.250.192.204"]
+    XT[" "]
+    T1["ansible-dev-target1<br>35.78.72.250"]
+    T2["ansible-dev-target2<br>35.77.223.151"]
+    T3["ansible-test-target1<br>13.114.42.248"]
+    T4["ansible-test-target2<br>54.250.192.204"]
   end
 
   A1 -->|"SSH + Ansible Modules"| T1
